@@ -6,17 +6,19 @@ You can retrieve source/sink info from server, create Record and Playback stream
 This module provides [libuv](https://github.com/joyent/libuv)-based **MainLoop API** for **PulseAudio** Context, it means that client uses same thread, where **V8** runs.
 Mainloop API consists of three things: I/O Event Polling, Deferred Calls and Timers. Resolution of timers limited by milliseconds.
 
+This is a modification on kayo's original `pulseaudio` module containing the updates from gcampax's fork for compatibility with nodejs 6.10+ .
+
 # Installation
 
 Install module with npm:
 
-    npm install pulseaudio
+    npm install pulseaudio-client
 
 # Usage
 
 Require and use:
 
-    var PulseAudio = require('pulseaudio');
+    var PulseAudio = require('pulseaudio-client');
     var context = PulseAudio();
     var player = context.createPlaybackStream();
     player.write(data);
